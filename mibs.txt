@@ -1,0 +1,17 @@
+host
+agentx
+smux
+ucd-snmp/diskio
+tcp-mib
+udp-mib
+mibII/mta_sendmail
+ip-mib/ipv4InterfaceTable
+ip-mib/ipv6InterfaceTable
+ip-mib/ipAddressPrefixTable/ipAddressPrefixTable
+ip-mib/ipDefaultRouterTable/ipDefaultRouterTable
+ip-mib/ipv6ScopeZoneIndexTable
+ip-mib/ipIfStatsTable
+sctp-mib
+rmon-mib
+etherlike-mib
+ucd-snmp/lmsensorsMib

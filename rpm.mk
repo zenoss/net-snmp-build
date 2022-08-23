@@ -144,6 +144,7 @@ $(RPM): $(BIN_TARGETS) $(SBIN_TARGETS) $(LIB_TARGETS) $(DOC_TARGETS) $(SNMP_DATA
 		-d tcp_wrappers-libs \
 		-d zlib \
 		--license bsd \
+		--after-install after-install.sh \
 		--replaces net-snmp-libs \
 		--replaces net-snmp-utils \
 		--replaces net-snmp-agent-libs \

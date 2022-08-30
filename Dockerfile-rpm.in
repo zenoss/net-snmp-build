@@ -1,0 +1,17 @@
+FROM centos:7
+
+RUN yum update -y
+RUN yum install -y epel-release
+RUN yum groups install -y "Development Tools"
+RUN yum install -y sudo git wget ruby-devel rubygems krb5-devel perl-devel perl-ExtUtils-Embed openssl-devel lm_sensors-devel rpm-devel
+
+RUN gem install --no-document git -v 1.7.0; \
+    gem install --no-document backports -v 3.21.0; \
+    gem install --no-document fpm -v 1.12.0; \
+    fpm --help
+
+RUN groupadd -f -g %GID% builder
+RUN useradd -d /home/builder -m -s /bin/bash -u %UID% -g %GID% builder
+RUN echo "builder ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+USER builder
